@@ -34,9 +34,9 @@ O código em JavaScript foi totalmente estruturado utilizando **Classes e Orient
 
 ## Tecnologias Utilizadas
 
-* **HTML5:** Estruturação semântica dos elementos da calculadora.
-* **CSS3:** Customização visual com CSS Grid, Flexbox, variáveis nativas (`:root`), gradientes e efeitos de pressionamento de teclas.
-* **JavaScript (ES6+):** Programação Orientada a Objetos com classes, atributos privados (`#`), manipulação da DOM e API `localStorage`.
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=js,html,css" alt="Minhas Habilidades" />
+</p>
 
 ---
 
