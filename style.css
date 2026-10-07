@@ -1,0 +1,167 @@
+/*NOTA: CSS GERADO POR IA */
+
+/* ===== Calculadora de mesa =====
+   Corpo cinza claro, visor tipo LCD e teclas com relevo.
+   Para mudar o visual, altere só as variáveis abaixo. */
+
+:root {
+    --fundo-pagina: #2f3438;
+    --corpo: #d3d6d8;
+    --corpo-borda: #b4b8bb;
+
+    --lcd-fundo: #b5c2a3;
+    --lcd-borda: #8d9a7c;
+    --lcd-texto: #1d271b;
+
+    --espaco: 12px;
+    --altura-tecla: 58px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--fundo-pagina);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* ----- Corpo da calculadora ----- */
+#container {
+    width: min(340px, 92vw);
+    padding: 20px;
+    background: linear-gradient(180deg, #dcdfe1 0%, var(--corpo) 100%);
+    border: 2px solid var(--corpo-borda);
+    border-radius: 20px;
+    box-shadow:
+        0 24px 40px rgba(0, 0, 0, 0.45),
+        inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ----- Visor LCD ----- */
+#visor {
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    background: var(--lcd-fundo);
+    border: 2px solid var(--lcd-borda);
+    border-radius: 8px;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#tela {
+    width: 100%;
+    height: 56px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--lcd-texto);
+    font-family: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: right;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.25);
+    pointer-events: none; /* visor é só leitura: sem cursor nem seleção */
+}
+
+/* ----- Teclado: dígitos à esquerda, operações à direita ----- */
+#digitos {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: var(--espaco);
+}
+
+#num {
+    display: grid;
+    gap: var(--espaco);
+}
+
+/* usa a estrutura em vez dos ids (ids que começam com número são chatos no CSS) */
+#num > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco);
+}
+
+#buttons {
+    display: grid;
+    grid-auto-rows: var(--altura-tecla);
+    gap: var(--espaco);
+}
+
+/* ----- Teclas ----- */
+input[type="button"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--altura-tecla);
+    border: 0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow:
+        0 4px 0 var(--borda-tecla),
+        0 7px 10px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    transition: transform 0.06s, box-shadow 0.06s, filter 0.15s;
+}
+
+input[type="button"]:hover {
+    filter: brightness(1.08);
+}
+
+/* tecla afundando ao clicar */
+input[type="button"]:active {
+    transform: translateY(3px);
+    box-shadow:
+        0 1px 0 var(--borda-tecla),
+        0 2px 4px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+input[type="button"]:focus-visible {
+    outline: 3px solid #2b6cb0;
+    outline-offset: 3px;
+}
+
+/* dígitos: cinza-chumbo */
+.digito {
+    --borda-tecla: #26292b;
+    background: #43474b;
+    color: #f4f5f5;
+}
+
+/* operações: cinza claro */
+.operador {
+    --borda-tecla: #9fa5a9;
+    background: #e8eaeb;
+    color: #23272a;
+    font-size: 1.7rem;
+}
+
+/* C: vermelho */
+.limpar {
+    --borda-tecla: #862d26;
+    background: #c4493d;
+    color: #ffffff;
+}
+
+/* =: verde */
+.igual {
+    --borda-tecla: #275f39;
+    background: #3f8a55;
+    color: #ffffff;
+    font-size: 1.7rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    input[type="button"] {
+        transition: none;
+    }
+}

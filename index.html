@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <!-- Visor da calculadora -->
+        <div id="visor">
+            <input type="text" id="tela" readonly>
+        </div>
+        <!-- Teclado -->
+        <div id="digitos">
+            <div id="num">
+                <div id="123">
+                    <input type="button" value="1" id="1" class="digito">
+                    <input type="button" value="2" id="2" class="digito">
+                    <input type="button" value="3" id="3" class="digito">
+                </div>
+                <div id="456">
+                    <input type="button" value="4" id="4" class="digito">
+                    <input type="button" value="5" id="5" class="digito">
+                    <input type="button" value="6" id="6" class="digito">
+                </div>
+                <div id="789">
+                    <input type="button" value="7" id="7" class="digito">
+                    <input type="button" value="8" id="8" class="digito">
+                    <input type="button" value="9" id="9" class="digito">
+                </div>
+                <div id="c0=">
+                    <input type="button" value="C" id="c" class="limpar">
+                    <input type="button" value="0" id="0" class="digito">
+                    <input type="button" value="=" id="=" class="igual">
+                </div>
+            </div>
+            <!-- Operações -->
+            <div id="buttons">
+                <input type="button" id="soma" value="+" class="operador">
+                <input type="button" id="sub" value="-" class="operador">
+                <input type="button" id="mult" value="x" class="operador">
+                <input type="button" id="div" value=":" class="operador">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
