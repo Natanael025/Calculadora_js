@@ -1,7 +1,3 @@
-/*NOTA: professor, para o código calculoUI houve auxilio 
-do uso de IA no esqueleto da classe e outros aspectos.
-ALÉM DISSO, o css foi inteiramente feito por IA */
-
 class Calculo{
     #num1
     #num2
